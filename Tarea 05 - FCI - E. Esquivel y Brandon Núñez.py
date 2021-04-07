@@ -1,5 +1,5 @@
 """
-Tarea 05 - Fourier - Filtrar señal (3) y Seal recuperada por transformada rápida inversa (4)
+Tarea 05 - Fourier - Filtrar señal (3) y Señal recuperada por transformada rápida inversa (4)
 
 @autora: María Elena Esquivel Murillo
 """
@@ -38,6 +38,7 @@ ax.set_xlabel('Tiempo(s)')
 ax.set_ylabel('Amplitud de la señal')
 ax.set_title('Gráfica 1. Generación de Señal Ruidosa')
 
+
 '''
 Ejercicio #2
 '''
@@ -58,6 +59,20 @@ Ejercicio #3
 '''
 
 def Filtrar_Señal (señal, umbral):
+    '''
+    Filtra las frecuencias cuyo intensidad se encuentre bajo el umbral
+
+    Parámetros
+    ----------
+    señal : señal obtenido por la transformada de fourier, cuyas entradas
+            son proporcionales a la intensidad de frecuencia dada
+    umbral : valor designado para intensidad bajo el cual las frecuencias son eliminadas.
+
+    Returns
+    -------
+    señal : devuele la señal luego de filtrar las frecuencias de baja intensidad (ruido)
+
+    '''
     for k in range(0, len(señal)):
         if np.abs(señal[k])<umbral:
             señal[k]=0
